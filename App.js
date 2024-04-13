@@ -2,7 +2,9 @@ import React from 'react';
 import {useFonts, Karla_300Light, Karla_700Bold} from '@expo-google-fonts/karla';
 import { View } from 'react-native';
 
-import Produto from "./src/telas/Produto";
+import mock from './src/mocks/produto';
+
+import Produto from './src/telas/Produtos/';
 
 export default function App() {
   
@@ -17,6 +19,6 @@ const [ fonteCarregada ] = useFonts({
     return <View />
   }
 
-   return <Produto/>
+   return <Produto {...mock}/>
 }
 
