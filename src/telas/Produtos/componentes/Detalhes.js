@@ -10,7 +10,7 @@ const width = Dimensions.get('screen').width;
 export default function Detalhes({ nome, Logo, detalhes, preco, botao}) {
     return <View style={styles.produto}>
         <View style={styles.logotipo}>
-            <Image source={Logo} style={styles.logo} resizeMode='contain' />
+            <Image source={Logo} style={styles.logo} resizeMode='contain'/>
             <Texto style={styles.nome}>{nome}</Texto>
         </View>
         <Texto style={styles.descricao}> {detalhes}</Texto>

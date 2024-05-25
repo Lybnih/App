@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, StatusBar, Image, Dimensions} from 'react-native';
 
-import Header from "../../../../assets/produtos/divina_comedia.webp";
+import Header from "../../../../assets/produtos/divina_comedia.png";
 import Texto from "../../../componentes/Texto";
 
 //Captura o tamanho da tela que esta rodando o app
