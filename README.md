@@ -1,8 +1,8 @@
 # Great Book: Sua biblioteca digital 📚📱
 
-<br>
-
 Great Book é uma aplicação mobile, construída com **React Native, JavaScript e Node.js** 
+
+<br>
 
 ## **O que o projeto oferece:**:mag:
 
