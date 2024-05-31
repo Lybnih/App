@@ -6,7 +6,7 @@ import livro_3 from "../../assets/produtos/livro_3.png";
 
 const produto = {
     topo: {
-        titulo: "Detalhes do Produto",
+        titulo: "Box",
     },
     detalhes: {
         nome: "Box A Divina Comédia",
@@ -19,16 +19,16 @@ const produto = {
         titulo: "Itens do Kit",
         lista: [
             {
-                nome: "Inferno",
+                nomep: "Inferno",
                 imagem: livro_1,
             },
             {
-                nome: "Purgatório",
+                nomep: "Purgatório",
                 imagem: livro_2,
             },
             {
-                nome: "Paraíso",
-                imagem: livro_3,
+                nomep: "Paraíso",
+                imagem: livro_3, 
             },
         ],
     }
