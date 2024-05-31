@@ -5,28 +5,11 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import ProdutoCard from './src/telas/Produtos_card';
 import SobreNos from './src/telas/sobre-nos';
-import mock from './src/mocks/produto';
-import mock2 from './src/mocks/produtos_card';
+import MenuBox from './src/telas/Produtos';
+import Catalogo from './src/telas/Produtos_card';
 
 const Tab = createBottomTabNavigator();
-
-function MenuBox() {
-  return (
-    <View>
-      <ProdutoCard produtos={mock.produtos} />
-    </View>
-  );
-}
-
-function Cards() {
-  return (
-    <View>
-      <ProdutoCard {...mock2} />
-    </View>
-  );
-}
 
 function TabsMenu() {
   return (
@@ -52,7 +35,7 @@ function TabsMenu() {
         tabBarHideOnKeyboard: true,
       })}
     >
-      <Tab.Screen name="Produtos" component={Cards} />
+      <Tab.Screen name="Produtos" component={Catalogo} />
       <Tab.Screen name="Box" component={MenuBox} />
       <Tab.Screen name="Sobre nós" component={SobreNos} />
       <Tab.Screen name="Lista de Desejos" component={MenuBox} />
