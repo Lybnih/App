@@ -1,62 +1,103 @@
-import { StyleSheet , Dimensions} from 'react-native';
+// src/telas/produto/estilo.js
+
+import { StyleSheet, Dimensions } from 'react-native';
 
 const width = Dimensions.get('screen').width;
 
 export default StyleSheet.create({
-    container: {
-        alignItems: "center", 
-        backgroundColor: '#F7F6F1', // Defina a cor de fundo da tela
-    },
-    topo: {
-        width: "100%",
-        height: 1000 / 1000 * width, // Ajuste a altura da imagem
-        marginTop: 70,
+    tela: {
+        flex:1,
+        alignItems: "center",
+        backgroundColor: '#286D50',
     },
     titulo: {
-        width: "100%",
-        position: "absolute",
-        textAlign: "center",
-        fontSize: 20,
-        color: "black",
+        fontWeight: 'bold',
+        width: '100%',
+        textAlign: 'center',
+        fontSize: 26,
+        color: 'white',
         padding: 16,
-        marginTop: 10,
-        zIndex: 1,
-        fontWeight: "bold",
+    },
+    container: {
+        alignItems: 'center',
+        paddingBottom: 50,
+    },
+    imageBackground: {
+        width: '100%',
+        height: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+    topo: {
+        width: "100%",
+        height: (700 / 1000) * width,
+        marginTop: 50,
     },
     produto: {
-        paddingVertical: 8,
-        paddingHorizontal: 16,
+        paddingHorizontal: 25,
     },
     nome: {
         fontWeight: "bold",
         textAlign: "center",
-        fontSize: 20,
+        fontSize: 22,
         color: "#BB2233",
         marginTop: 12,
-        marginBottom: 10,
+        marginBottom: 2,
     },
     descricao: {
+        fontWeight: "bold",
         textAlign: "justify",
-        fontSize: 18,
-        color: "#A3A3A3",
-        marginBottom: 10,
-    },
-    preco: {
-        textAlign: "right",
         fontSize: 17,
         color: "black",
-        marginTop: 8,
-        color: "#BB2233",
     },
-    logo: {
-        width: 40,
-        height: 40,
-        marginTop: 15,
+    preco: {
+        fontWeight: "bold",
+        textAlign: "right",
+        fontSize: 17,
+        color: "#BB2233",
+        marginTop: 8,
+    },
+    botao: {
+        backgroundColor: '#286D50',
+        padding: 12,
+        borderRadius: 8,
+        marginTop: 20,
+    },
+    botaoTexto: {
+        color: 'white',
+        fontWeight: 'bold',
+        textAlign: 'center',
     },
 
-    logotipo: {
-        flexDirection: "row",
-        alignItems: "center",
+    
+    titulo2:{
+        width: "100%",
+        textAlign: "center",
+        fontSize: 40,
+        marginTop: 10,
+        fontWeight: "bold",
+        padding: 5,
+        marginTop: 55,
     },
-  });
-  
+    item:{
+        flexDirection: "row",
+        borderBottomWidth: 1,
+        borderTopWidth: 4,
+        borderColor:"#286D50",
+        paddingVertical: 16,
+        alignItems: "center",
+        backgroundColor: 'rgba(255, 255, 255, 0.4)',
+    },
+    nomep: {
+        fontSize: 25,
+        color: "black",
+        lineHeight: 26,
+        marginLeft: 11,
+        fontWeight: "bold",
+    },
+    imagem: {
+        width: 230,
+        height: 230,
+    }
+
+});
