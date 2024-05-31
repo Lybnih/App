@@ -20,28 +20,30 @@ export default StyleSheet.create({
     card: {
         alignItems: "center",
         width: "47%",
-        margin: 6,
-        backgroundColor: "white",
+        margin: 5,
         borderRadius: 20,
+        padding: 5,
     },
     tituloCard: {
-        height: 80,
+        height: 60,
         fontWeight: "bold",
         textAlign: "center",
-        fontSize: 24,
+        fontSize: 20,
         color: "black",
         padding: 5,
     },
     descricao: {
         textAlign: "justify",
-        fontSize: 15,
+        fontSize: 16,
         color: "black",
-        padding: 5,
-        minHeight: 90,
+        padding: 2,
+        paddingVertical: 5,
     },
     imgProd: {
-        borderRadius: 20,
-        height: 200,
+        padding: 3,
+        borderRadius: 9,
+        height: 260,
+        width: 170,
     },
 
     
@@ -49,7 +51,8 @@ export default StyleSheet.create({
         borderRadius: 20,
         height: 200,
         width: 200,
-    }, centeredView: {
+    }, 
+    centeredView: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
