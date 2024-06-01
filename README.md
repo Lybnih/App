@@ -23,6 +23,14 @@ Great Book é uma aplicação mobile, construída com **React Native, JavaScript
 
 <br>
 
+### **De uma olhada:**
+
+<p align = "center">
+
+https://github.com/Lybnih/App-GreatBook/assets/132515156/616cfdc6-cea6-40d5-ac77-8e56eaf2693d
+
+</p>
+
 ### **Contribua:**
 
 *Este projeto está em constante desenvolvimento, sinta-se à vontade para colaborar com ideias, sugestões ou código!*
