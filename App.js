@@ -1,13 +1,18 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { useFonts, Karla_300Light, Karla_700Bold } from '@expo-google-fonts/karla';
-import { View } from 'react-native';
+import { View, TouchableOpacity, StyleSheet} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+import Texto from './src/componentes/Texto'
+
 import SobreNos from './src/telas/sobre-nos';
 import MenuBox from './src/telas/Produtos';
 import Catalogo from './src/telas/Produtos_card';
+
+//Áudio
+import {Audio} from 'expo-av';
 
 const Tab = createBottomTabNavigator();
 
@@ -58,6 +63,53 @@ export default function App() {
   return (
     <NavigationContainer>
       <TabsMenu />
+      <MenuAudio/>
     </NavigationContainer>
   );
 }
+
+function MenuAudio(){
+
+  //Áudio para o APP
+  const [audioStatus, setAudioStatus] = useState(false)//on,off, false iniciar desligado
+  const [sound, setSound] = useState(null);
+  const [loading, setLoading] = useState(false);
+  
+  //variavel de efeito
+  useEffect(() => {
+    (async () => {
+      console.log('status', audioStatus);
+      if (audioStatus) {
+        setLoading(true);
+        const { sound } = await Audio.Sound.createAsync(require('./assets/song/acdc_highway_to_hell.mp3'));
+        setSound(sound);
+        try {
+          await sound.playAsync();
+        } catch (e) {
+          console.log(e);
+        }
+        setLoading(false);
+      } else {
+        if (sound) {
+          try {
+            await sound.stopAsync();//paro musica
+            await sound.unloadAsync();//descarrego ela
+          } catch (e) {
+            console.log(e);
+          }
+        }
+      }
+    })();
+  }, [audioStatus]);
+
+  return <TouchableOpacity onPress={() => { if(!loading) {setAudioStatus(!audioStatus);}}}>
+            <Texto style={Styles.botaoAudio}>🎧 On/Off</Texto>
+          </TouchableOpacity>
+}
+
+const Styles = StyleSheet.create({
+  botaoAudio:{
+    color: 'green',
+    backgroundColor: 'white'
+  }
+})
