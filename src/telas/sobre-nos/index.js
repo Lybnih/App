@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, View, ScrollView, ImageBackground } from 'react-native';
+import { Image, View, ScrollView, ImageBackground, Button } from 'react-native';
 import { Video, ResizeMode } from 'expo-av';
 import Texto from '../../componentes/Texto.js';
 import styles from './estilo.js';
@@ -20,21 +20,20 @@ export default function Sobre() {
                             <Image source={Mock.topo.imagem} style={styles.logo} resizeMode='contain' />
                             <Texto style={styles.texto}>{Mock.topo.txt}</Texto>
                             <Image source={Mock.topo.img_local} style={styles.imagem} resizeMode='contain' />
-                            
-                            <Video
-                                ref={video}
-                                style={styles.video}
-                                source={{
-                                    uri: 'https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
-                                }}
-                                useNativeControls
-                                resizeMode={ResizeMode.CONTAIN}
-                                isLooping
-                                onPlaybackStatusUpdate={status => setStatus(() => status)}
-                            />
 
+                            <View style={styles.videoContainer}>
+                                <Video
+                                    ref={video}
+                                    style={{ width: '100%', height: '100%' }} // Ocupe todo o espaço do container
+                                    source={require('../../../assets/sobre/livraria_video.mp4')}
+                                    resizeMode={ResizeMode.CONTAIN}
+                                    isLooping
+                                    onPlaybackStatusUpdate={status => setStatus(() => status)}
+                                />
                             </View>
+
                         </View>
+                    </View>
                 </ScrollView>
             </ImageBackground>
         </View>

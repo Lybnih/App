@@ -1,5 +1,3 @@
-// src/telas/sobre-nos/estilo.js
-
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
@@ -15,10 +13,7 @@ export default StyleSheet.create({
     color: 'white',
     padding: 16,
   },
-  container: {
-    alignItems: 'center',
-    paddingBottom: 50,
-  },
+
   imageBackground: {
     flex: 1,
     width: '100%',
@@ -49,6 +44,16 @@ export default StyleSheet.create({
     height: 290,
     borderRadius: 15,
     borderWidth: 3,
+    borderColor: 'white',
+    marginBottom: 50,
+  },
+  videoContainer: {
+    width: '85%',
+    height: 200,
+    marginBottom: 50, 
+    borderRadius: 15,
+    borderWidth: 3,
+    borderWidth: '85%',
     borderColor: 'white',
   },
 });
