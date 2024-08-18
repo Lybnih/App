@@ -13,7 +13,6 @@ export default StyleSheet.create({
     color: 'white',
     padding: 16,
   },
-
   imageBackground: {
     flex: 1,
     width: '100%',
@@ -26,7 +25,6 @@ export default StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 25,
   },
-
   texto: {
     fontWeight: 'bold',
     textAlign: 'center',
@@ -50,10 +48,12 @@ export default StyleSheet.create({
   videoContainer: {
     width: '85%',
     height: 200,
-    marginBottom: 50, 
-    borderRadius: 15,
-    borderWidth: 3,
-    borderWidth: '85%',
+  },
+  video: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 15, 
+    borderWidth: 3, 
     borderColor: 'white',
   },
 });
