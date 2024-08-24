@@ -34,7 +34,7 @@ function TabsMenu() {
           } else if (route.name === "Lista de Desejos") {
             iconName = focused ? 'bag-handle' : 'bag-handle-outline';
           } else if (route.name === "Perfil") {
-            iconName = focused ? 'bag-handle' : 'bag-handle-outline';
+            iconName = focused ? 'person' : 'person-outline';
           }
 
 
@@ -119,6 +119,9 @@ function MenuAudio(){
 const Styles = StyleSheet.create({
   botaoAudio:{
     color: 'green',
-    backgroundColor: 'white'
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    padding: 15,
   }
 })
