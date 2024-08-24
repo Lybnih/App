@@ -10,6 +10,8 @@ import Texto from './src/componentes/Texto'
 import SobreNos from './src/telas/sobre-nos';
 import MenuBox from './src/telas/Produtos';
 import Catalogo from './src/telas/Produtos_card';
+import Perfil from './src/telas/Perfil';
+import Formulario from './src/telas/Formulario';
 
 //Áudio
 import {Audio} from 'expo-av';
@@ -31,7 +33,10 @@ function TabsMenu() {
             iconName = focused ? 'heart-circle' : 'heart-outline';
           } else if (route.name === "Lista de Desejos") {
             iconName = focused ? 'bag-handle' : 'bag-handle-outline';
+          } else if (route.name === "Perfil") {
+            iconName = focused ? 'bag-handle' : 'bag-handle-outline';
           }
+
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
@@ -44,6 +49,10 @@ function TabsMenu() {
       <Tab.Screen name="Box" component={MenuBox} />
       <Tab.Screen name="Sobre nós" component={SobreNos} />
       <Tab.Screen name="Lista de Desejos" component={MenuBox} />
+      <Tab.Screen name="Perfil" component={Perfil} />
+      <Tab.Screen name="Formulario" component={Formulario} options={{
+      tabBarButton: () => null, 
+    }} />
     </Tab.Navigator>
   );
 }
@@ -81,7 +90,7 @@ function MenuAudio(){
       console.log('status', audioStatus);
       if (audioStatus) {
         setLoading(true);
-        const { sound } = await Audio.Sound.createAsync(require('./assets/song/acdc_highway_to_hell.mp3'));
+        const { sound } = await Audio.Sound.createAsync(require('./assets/song/lofi.mp3'));
         setSound(sound);
         try {
           await sound.playAsync();
