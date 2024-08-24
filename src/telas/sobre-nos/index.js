@@ -1,5 +1,6 @@
 import React from 'react';
-import { Image, View, ScrollView, ImageBackground } from 'react-native';
+import { Image, View, ScrollView, ImageBackground, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { Video, ResizeMode } from 'expo-av';
 import Texto from '../../componentes/Texto.js';
 import styles from './estilo.js';
@@ -8,6 +9,7 @@ import Mock from '../../mocks/sobre_nos.js';
 export default function Sobre() {
     const video = React.useRef(null);
     const [status, setStatus] = React.useState({});
+    const navigation = useNavigation();
 
     React.useEffect(() => {
         if (video.current) {
@@ -40,8 +42,10 @@ export default function Sobre() {
                                     onPlaybackStatusUpdate={status => setStatus(() => status)} 
                                 />
                             </View>
-
                             </View>
+                            <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Formulario')}>
+                                <Texto style={styles.textoBotao}>Entre em Contato</Texto>
+                            </TouchableOpacity>
                         </View>
                 </ScrollView>
             </ImageBackground>
