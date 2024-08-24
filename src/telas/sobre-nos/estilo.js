@@ -52,8 +52,27 @@ export default StyleSheet.create({
   video: {
     width: '100%',
     height: '100%',
-    borderRadius: 15, 
-    borderWidth: 3, 
+    borderRadius: 15,
+    borderWidth: 3,
     borderColor: 'white',
+  },
+  botaoContainer: {
+    width: '100%',
+    alignItems: 'center',
+    marginTop: 15,
+    marginBottom: 25,
+  },
+  botao: {
+    alignItems: 'center',
+    width: '50%',
+    marginTop: 15,
+    backgroundColor: '#286D50',
+    borderRadius: 10,
+    padding: 10,
+  },
+  textoBotao: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
 });

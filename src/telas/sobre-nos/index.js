@@ -17,9 +17,7 @@ export default function Sobre() {
         }
     }, [video]);
 
-
     return (
-
         <View style={styles.tela}>
             <Texto style={styles.titulo}>{Mock.topo.titulo}</Texto>
             <ImageBackground source={require('../../../assets/fundo/background.png')} style={styles.imageBackground}>
@@ -42,15 +40,16 @@ export default function Sobre() {
                                     onPlaybackStatusUpdate={status => setStatus(() => status)} 
                                 />
                             </View>
+                            
+                            <View style={styles.botaoContainer}>
+                                <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Formulario')}>
+                                    <Texto style={styles.textoBotao}>Entre em Contato !</Texto>
+                                </TouchableOpacity>
                             </View>
-                            <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Formulario')}>
-                                <Texto style={styles.textoBotao}>Entre em Contato</Texto>
-                            </TouchableOpacity>
                         </View>
+                    </View>
                 </ScrollView>
             </ImageBackground>
         </View>
-
     );
 }
-

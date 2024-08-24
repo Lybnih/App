@@ -52,12 +52,12 @@ export default StyleSheet.create({
     backgroundColor: 'rgba(200, 200, 200, 0.5)',
     fontSize: 18,
   },
-  checkboxContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  checkboxText: {
-    marginLeft: 10,
+  voltarBotao: {
+    position: 'absolute', 
+    top: 20, 
+    left: 20, 
+    backgroundColor: '#5F9EA0',
+    borderRadius: 10,
+    padding: 10,
   },
 });
