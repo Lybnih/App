@@ -36,7 +36,7 @@ function TabsMenu() {
           } else if (route.name === "Perfil") {
             iconName = focused ? 'person' : 'person-outline';
           }
-
+          
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
@@ -119,9 +119,6 @@ function MenuAudio(){
 const Styles = StyleSheet.create({
   botaoAudio:{
     color: 'green',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white',
-    padding: 15,
+    backgroundColor: 'white'
   }
 })
