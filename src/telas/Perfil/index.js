@@ -42,7 +42,7 @@ export default function Sobre() {
         {isCameraVisible ? (
           <Camera style={{ flex: 1, width: '100%' }} ref={ref => setCameraRef(ref)}>
             <TouchableOpacity style={styles.cameraButton} onPress={takePicture}>
-              <Text source={require('../../../assets/fundo/background.png')} style={styles.cameraButtonText}>Tirar Foto</Text>
+              <Text style={styles.cameraButtonText}>Tirar Foto</Text>
             </TouchableOpacity>
           </Camera>
         ) : (
