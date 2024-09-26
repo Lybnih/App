@@ -30,7 +30,7 @@ export default function CardProd({ item: { id, nome, imagem, valor } }) {
             console.log("Adicionou Produto");
             console.log(listaDesejosAtualizada);
         }else{
-            //A lista ja esta preenchida
+            // A lista ja esta preenchida
             const listaDesejos = JSON.parse(listaDesejosSalva);
 
             //Insere mais um produto na lista
@@ -42,8 +42,9 @@ export default function CardProd({ item: { id, nome, imagem, valor } }) {
             //Insere no asyncstorage
             await AsyncStorage.setItem('ListaDesejos', listaDesejosAtualizada);
             Alert.alert("Incluido com Sucesso na Lista de Desejos!");
-            console.log("Mais um peoduto na lista");
+            console.log("Mais um produto na lista");
             console.log(listaDesejosAtualizada);
+        // await AsyncStorage.clear();
         }
     }
 
