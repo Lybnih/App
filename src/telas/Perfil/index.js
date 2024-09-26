@@ -54,7 +54,7 @@ export default function Sobre() {
               />
             </TouchableOpacity>
             <Text style={styles.name}>Vitória Lybnih</Text>
-            <Text style={styles.email}>vitoria@example.com</Text>
+            <Text style={styles.email}>lybnihvitoria@gmail.com</Text>
           </>
         )}
       </ImageBackground>

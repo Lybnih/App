@@ -106,4 +106,10 @@ export default StyleSheet.create({
         marginBottom: 15,
         textAlign: 'center',
     },
+    row: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',  
+        marginTop: 10, 
+    }
 });
