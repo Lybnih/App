@@ -33,7 +33,7 @@ export default function ListaDesejos(){
                     data={listData}
                     renderItem={({ item }) => <ListaItem {...item} />}
                     keyExtractor={({ id }) => String(id)}
-                    numColumns={2}
+                    numColumns={1}
                     contentContainerStyle={styles.flatListContainer} // Adicione este estilo
                 />
             </ImageBackground>

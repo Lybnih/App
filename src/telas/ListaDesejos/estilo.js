@@ -13,55 +13,47 @@ export default StyleSheet.create({
     color: 'white',
     padding: 16,
   },
- 
   imageBackground: {
     flex: 1,
     width: '100%',
     height: '100%',
     justifyContent: 'center',
-    alignItems: 'center',
   },
+
+
   cardContainer: {
-    width:'50%',
-    height: '100%',
-  },
-  imagem: {
-    width: '100%',
-    height:'78%',
-    alignSelf: 'center',
+    marginVertical: 10,
   },
   card: {
-    alignItems: "center",
-    width: "85%",
-    height: 190,
-    margin: 16,
+    width: '100%', 
     borderRadius: 15,
+    backgroundColor: '#D9E4D5', 
+    borderWidth: 2,
+    borderColor: '#286D50', 
+    padding: 5,
+    justifyContent: 'space-between'
   },
   tituloCard: {
-        fontWeight: "bold",
-        textAlign: "center",
-        color: "black",
-        padding: 5,
-        marginTop: 2,
-    },
-
-    //   tituloCard: {
-    //     fontSize: 18,
-    //     fontWeight: "bold",
-    //     marginTop: 10,
-    //     textAlign: "center",
-    //   },
-    //   flatListContainer: {
-    //     padding: 10,
-    //   },
-//   nomeProduto: {
-//     color: 'white',
-//     fontWeight: 'bold',
-//     fontSize: 16,
-//     textAlign: 'center',
-//   },
-//   textoLista: {
-//     fontSize: 16,
-//     paddingBottom: 10,
-//   },
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: "left",
+    flex:1,
+    marginTop: 5,
+    left: 55,
+  },
+  trashIconContainer: {
+    position: 'absolute',
+    top: 15,
+    right: 1,
+  },
+  flatListContainer: {
+    padding: 30,
+    width: '100%',
+  },
+  bookIconContainer: {
+    width: '100%',
+    alignItems: 'left',
+    left: 7,
+    display: 'flex',
+  },
 });
