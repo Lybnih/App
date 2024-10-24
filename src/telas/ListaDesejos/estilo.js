@@ -39,7 +39,8 @@ export default StyleSheet.create({
     textAlign: "left",
     flex:1,
     marginTop: 5,
-    left: 55,
+    left: 59,
+    top: 7,
   },
   trashIconContainer: {
     position: 'absolute',
@@ -54,6 +55,7 @@ export default StyleSheet.create({
     width: '100%',
     alignItems: 'left',
     left: 7,
+    bottom: 12,
     display: 'flex',
   },
 });
