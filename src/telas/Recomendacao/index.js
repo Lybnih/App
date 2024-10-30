@@ -1,57 +1,73 @@
-import React, { useState, useEffect } from 'react';
-import { Text, Image, ScrollView } from 'react-native';
+import React, { useState, useCallback } from 'react';
+import { View, Text, Image, ActivityIndicator, ImageBackground, ScrollView} from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
+import { Texto } from '../../componentes/Texto'
 import styles from './estilo';
-import axios from 'axios';
 
-const API_KEY = 'AIzaSyDiUcEqE_f_x4aqzjH3RSEVnF_djUXiBt4';
+export default function BookRecommendation() {
+  const [book, setBook] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-export default function Recomendacao() {
-  const [livro, setLivro] = useState(null);
-  const [erro, setErro] = useState(null);
+  const apiKey = 'AIzaSyDiUcEqE_f_x4aqzjH3RSEVnF_djUXiBt4';
 
-  const buscarLivroAleatorio = async () => {
-    try {
-      const response = await axios.get(
-        `https://www.googleapis.com/books/v1/volumes?q=intitle:programming&maxResults=1&key=${API_KEY}`
-      );
-      
-      console.log(response.data); // Verificar a estrutura da resposta
-
-      if (response.data.items && response.data.items.length > 0) {
-        const livroData = response.data.items[0];
-        const imagem = livroData.volumeInfo.imageLinks?.thumbnail || 'https://via.placeholder.com/150';
-        const titulo = livroData.volumeInfo.title;
-        const autor = livroData.volumeInfo.authors?.[0] || 'Autor Desconhecido';
-        const sinopse = livroData.volumeInfo.description || 'Sinopse não disponível';
-
-        setLivro({ imagem, titulo, autor, sinopse });
-      } else {
-        setErro('Nenhum livro encontrado.');
-      }
-    } catch (error) {
-      console.error('Erro ao buscar livro:', error);
-      setErro('Erro ao buscar livro. Por favor, tente novamente mais tarde.');
-    }
+  const fetchRandomBook = () => {
+    setLoading(true);
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=livros&key=${apiKey}&maxResults=40`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.items && data.items.length > 0) {
+          const randomIndex = Math.floor(Math.random() * data.items.length);
+          const randomBook = data.items[randomIndex];
+          setBook({
+            title: randomBook.volumeInfo.title,
+            authors: randomBook.volumeInfo.authors || ['Autor desconhecido'],
+            description: randomBook.volumeInfo.description || 'Descrição não disponível.',
+            publishedDate: randomBook.volumeInfo.publishedDate || 'Data de publicação desconhecida',
+            thumbnail: randomBook.volumeInfo.imageLinks?.thumbnail || null,
+          });
+        }
+      })
+      .catch(error => console.error('Erro ao buscar dados:', error))
+      .finally(() => setLoading(false));
   };
 
-  useEffect(() => {
-    buscarLivroAleatorio();
-  }, []);
+  useFocusEffect(
+    useCallback(() => {
+      fetchRandomBook();
+    }, [])
+  );
+
+  if (loading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#286D50" />
+      </View>
+    );
+  }
 
   return (
-    <ScrollView style={styles.container}>
-      {erro ? (
-        <Text>{erro}</Text>
-      ) : livro ? (
+    <View style={styles.tela}>
+       <Text style={styles.titulo}>Recomendação</Text>
+      <ImageBackground source={require('../../../assets/fundo/background.png')} style={styles.imageBackground}>
+      <ScrollView contentContainerStyle={styles.scrollViewContent}>
+      {book ? (
         <>
-          <Image source={{ uri: livro.imagem }} style={styles.imagem} />
-          <Text style={styles.titulo}>{livro.titulo}</Text>
-          <Text style={styles.autor}>Por: {livro.autor}</Text>
-          <Text style={styles.sinopse}>{livro.sinopse}</Text>
+        <Text style={styles.title}>{book.title}</Text>
+          <Image
+            source={book.thumbnail ? { uri: book.thumbnail } : require('../../../assets/Livros/img_padrao.png')}
+            style={styles.bookImage}
+          />
+          
+          <Text style={styles.author}>Autor(es): {book.authors.join(', ')}</Text>
+          <Text style={styles.description}>{book.description}</Text>
+          <Text style={styles.publishedDate}>Data de Publicação: {book.publishedDate}</Text>
         </>
       ) : (
-        <Text>Carregando livro...</Text>
+        <Text style={styles.errorText}>Nenhum livro encontrado.</Text>
       )}
-    </ScrollView>
+      </ScrollView>
+      </ImageBackground>
+    </View>
   );
 }
+

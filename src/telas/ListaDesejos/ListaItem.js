@@ -5,7 +5,6 @@ import styles from './estilo.js';
 import { useNavigation } from '@react-navigation/native';
 
 import Texto from "../../componentes/Texto";
-import { StatusBar } from "expo-status-bar";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { View, Alert, TouchableOpacity } from "react-native";
 
@@ -25,7 +24,6 @@ export default function ListaItem({ id, nome }) {
 
      // Atualiza o AsyncStorage
      await AsyncStorage.setItem('ListaDesejos', listaDesejosAtualizada);
-     Alert.alert("Produto removido da lista de desejos.");
      console.log('produto removido');
      navigation.reset({index: 0, routes: [{name: 'Lista de Desejos'}]});
 

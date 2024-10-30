@@ -35,8 +35,7 @@ export default function Formulario() {
       <ImageBackground source={require('../../../assets/fundo/background.png')} style={styles.imageBackground}>
         <ScrollView contentContainerStyle={styles.scrollViewContent}>
           <View style={styles.contentContainer}>
-            
-            
+                
             <TextInput
               style={styles.input}
               placeholder="Nome Completo"

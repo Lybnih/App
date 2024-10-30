@@ -20,7 +20,6 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
 
-
   cardContainer: {
     marginVertical: 10,
   },
@@ -47,10 +46,12 @@ export default StyleSheet.create({
     top: 15,
     right: 1,
   },
+  
   flatListContainer: {
     padding: 30,
     width: '100%',
   },
+
   bookIconContainer: {
     width: '100%',
     alignItems: 'left',
@@ -58,4 +59,14 @@ export default StyleSheet.create({
     bottom: 12,
     display: 'flex',
   },
+
+  botao:{
+    color: "white",
+    fontWeight: "bold",
+    alignItems: "center",
+    backgroundColor: "#286D50",
+    borderRadius: 5,
+    padding: 10,
+  }
+
 });

@@ -41,7 +41,7 @@ export default function CardProd({ item: { id, nome, imagem, valor } }) {
 
             //Insere no asyncstorage
             await AsyncStorage.setItem('ListaDesejos', listaDesejosAtualizada);
-            Alert.alert("Incluido com Sucesso na Lista de Desejos!");
+            // Alert.alert("Incluido com Sucesso na Lista de Desejos!");
             console.log("Mais um produto na lista");
             console.log(listaDesejosAtualizada);
         // await AsyncStorage.clear();
