@@ -4,7 +4,7 @@ import Texto from '../../componentes/Texto.js';
 import styles from './estilo.js';
 import { Camera } from 'expo-camera';
 
-export default function Sobre() {
+export default function Perfil() {
   const [hasPermission, setHasPermission] = useState(null);
   const [imageUri, setImageUri] = useState(require('../../../assets/perfil/perfil-padrão.png')); 
   const [cameraRef, setCameraRef] = useState(null);

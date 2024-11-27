@@ -40,13 +40,15 @@ function TabsMenu() {
           } else if (route.name === "Perfil") {
             iconName = focused ? 'person' : 'person-outline';
           }
-          
-
           return <Ionicons name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: '#286D50',
         tabBarInactiveTintColor: '#5F9EA0',
+        tabBarStyle: Styles.tabBar, // Aplica o estilo à barra
+        tabBarItemStyle: Styles.tabBarItem, // Aplica o estilo aos itens
+        tabBarLabelStyle: Styles.tabBarLabel,
         tabBarHideOnKeyboard: true,
+        tabBarShowLabel: false,
       })}
     >
       <Tab.Screen name="Produtos" component={Catalogo} />
@@ -124,6 +126,30 @@ function MenuAudio(){
 const Styles = StyleSheet.create({
   botaoAudio:{
     color: 'green',
-    backgroundColor: 'white'
-  }
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    padding: 15,
+  },
+
+  tabBar: {
+    backgroundColor: '#ffffff',
+    height: 40,
+    width:"100%",
+    borderTopWidth: 1,
+    borderTopColor: '#ddd', 
+    paddingLeft:0,
+    marginLeft:0,
+  },
+  tabBarItem: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingLeft:55,
+  },
+  tabBarLabel: {
+    fontSize: 12,
+    fontWeight: 'bold',
+  },
 })
+
