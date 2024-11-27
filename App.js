@@ -12,6 +12,8 @@ import MenuBox from './src/telas/Produtos';
 import Catalogo from './src/telas/Produtos_card';
 import Perfil from './src/telas/Perfil';
 import Formulario from './src/telas/Formulario';
+import ListaDesejos from './src/telas/ListaDesejos';
+import Leia from './src/telas/Recomendacao';
 
 //Áudio
 import {Audio} from 'expo-av';
@@ -29,7 +31,9 @@ function TabsMenu() {
             iconName = focused ? 'list-outline' : 'list';
           } else if (route.name === "Box") {
             iconName = focused ? 'book' : 'book-outline';
-          } else if (route.name === "Sobre nós") {
+          } else if (route.name === "Leia") {
+            iconName = focused ? 'star' : 'star-outline';
+          }else if (route.name === "Sobre nós") {
             iconName = focused ? 'heart-circle' : 'heart-outline';
           } else if (route.name === "Lista de Desejos") {
             iconName = focused ? 'bag-handle' : 'bag-handle-outline';
@@ -47,8 +51,9 @@ function TabsMenu() {
     >
       <Tab.Screen name="Produtos" component={Catalogo} />
       <Tab.Screen name="Box" component={MenuBox} />
+      <Tab.Screen name="Leia" component={Leia} />
       <Tab.Screen name="Sobre nós" component={SobreNos} />
-      <Tab.Screen name="Lista de Desejos" component={MenuBox} />
+      <Tab.Screen name="Lista de Desejos" component={ListaDesejos} />
       <Tab.Screen name="Perfil" component={Perfil} />
       <Tab.Screen name="Formulario" component={Formulario} options={{
       tabBarButton: () => null, 
